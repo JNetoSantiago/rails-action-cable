@@ -1,0 +1,16 @@
+<ul id="messages" data-room-id="<%= @chat_room.id %>">
+<% @chat_room.messages.each do |message| %>
+  <%= render 'chat_rooms/message', message: message %>
+<% end %>
+</ul>
+
+<%= simple_form_for @message do |f| %>
+  <%= f.input :message %>
+  <button type="submit" onClick="clearButton">Send</button>
+<% end %>
+
+<script>
+  function clearButton() {
+
+  }
+</script>
