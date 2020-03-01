@@ -1,24 +1,87 @@
-# README
+# Chat com action cable!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Stack
 
-Things you may want to cover:
+* Ruby 2.6.3
+* Rails 6.0.2
+* PostgreSql
 
-* Ruby version
+## Como preparar o ambiente?
 
-* System dependencies
+---
+Instalar rvm
+---
+[https://rvm.io/rvm/install](Link URL)
 
-* Configuration
+---
+Instalar Ruby
+---
+```
+rvm install 2.6.3
+```
+---
+Instalar o Bundler
+```
+gem install bundler
+```
 
-* Database creation
+---
+Instalar as gems
+---
+```
+bundle install
+```
 
-* Database initialization
+---
+Instalar o PostgreSql
+---
+### Ubuntu
+```
+sudo apt-get install postgresql postgresql-contrib libpq-dev
+```
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+### macOS
+```
+brew install postgresql
+```
 
-* Deployment instructions
+Para que seja mais simples gerenciar os bancos de dados de desenvolvimento, crie um usuário no PostgreSQL com o mesmo nome do seu usuário Ubuntu.
 
-* ...
+```
+sudo -u postgres createuser -rds $USER
+```
+
+Depois, crie um banco de dados com o mesmo nome de seu usuário.
+```
+$ createdb $USER
+```
+
+Finalmente, você pode acessar o console do PostgreSQL com o comando psql.
+```
+$ psql
+psql (9.4.2)
+Type "help" for help.
+
+user=#
+```
+
+---
+Executando as migrations
+---
+```
+rails db:create db:migrate db:seed
+```
+---
+Instalando as dependências do node_modules
+---
+```
+yarn install
+```
+## Executar em modo de desenvolvimento
+```
+rails s
+```
+
+## Code Maintenance
+- João Evangelista Santiago Neto
